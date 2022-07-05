@@ -3,21 +3,21 @@ services:
   app:
     image: ghcr.io/go-shiori/shiori:v1.5.3
     ports:
-      - ${SHIORI_PORT}:8080
+      - 8003:8080
     restart: always
     environment:
       - SHIORI_DBMS=postgres
       - SHIORI_PG_HOST=db
       - SHIORI_PG_PORT=5432
-      - SHIORI_PG_USER=${POSTGRES_USER}
-      - SHIORI_PG_PASS=${POSTGRES_PASSWORD}
+      - SHIORI_PG_USER=shiori
+      - SHIORI_PG_PASS=shiori
       - SHIORI_PG_NAME=shiori
   db:
     image: postgres:12.3-alpine
     restart: always
     environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=shiori
+      - POSTGRES_PASSWORD=shiori
       - POSTGRES_DB=shiori
     volumes:
       - db:/var/lib/postgresql/data

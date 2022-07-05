@@ -13,6 +13,7 @@ services:
       - SHIORI_PG_PASS=shiori
       - SHIORI_PG_NAME=shiori
   db:
+    container_name: db
     image: postgres:12.3-alpine
     restart: always
     environment:

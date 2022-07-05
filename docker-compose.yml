@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    image: go-shiori/shiori
+    image: ghcr.io/go-shiori/shiori:v1.5.3
     ports:
       - ${SHIORI_PORT}:8004
     restart: always

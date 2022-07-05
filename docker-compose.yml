@@ -21,5 +21,6 @@ services:
       - POSTGRES_DB=shiori
     volumes:
       - db:/var/lib/postgresql/data
+
 volumes:
   db:
